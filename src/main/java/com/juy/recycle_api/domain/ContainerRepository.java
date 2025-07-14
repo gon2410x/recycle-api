@@ -42,7 +42,7 @@ public interface ContainerRepository extends CrudRepository<Container, Long> {
             "SELECT id_location FROM location " +
             "JOIN department ON department = id_department " +
             "JOIN province ON province = id_province " +
-            "WHERE province_name = :provinceName AND department_name = :departmentName AND location_name = :locationName";
+            "WHERE location_name = :locationName AND department_name = :departmentName AND province_name = :provinceName";
     @Query(value = queryLocation, nativeQuery = true)
-    Long findLocationByProvinceByDepartmentByLocation(String provinceName, String departmentName, String locationName);
+    Long findLocationByProvinceByDepartmentByLocation(@Param("provinceName") String provinceName, @Param("departmentName") String departmentName, @Param("locationName") String locationName);
 }

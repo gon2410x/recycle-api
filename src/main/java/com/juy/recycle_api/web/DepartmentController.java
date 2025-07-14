@@ -19,7 +19,7 @@ public class DepartmentController {
 		super();
 		this.repository = repository;
 	}
-	
+
 	@GetMapping("Department")
 	public Iterable<Department> getDepartment(){
 		return repository.findAll();

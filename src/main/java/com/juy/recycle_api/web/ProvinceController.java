@@ -21,23 +21,11 @@ public class ProvinceController {
 
 
 	@CrossOrigin(origins = "http://localhost:5173") // Permite CORS solo para este método
-	@GetMapping("/provinces")
+	@GetMapping("/api/provinces")
 	public Iterable<Province> getProvinces(){
 		return repository.findAll();
 	}
 
-	@CrossOrigin(origins = "http://localhost:5173") // Permite CORS solo para este método
-	@GetMapping("/api/provi")
-	public Iterable<Province> getProvinces2(){
-		return repository.findAll();
-	}
-
-	@CrossOrigin(origins = "http://localhost:5173") // Permite CORS solo para este método
-	@GetMapping("api/provincesed")
-		public Iterable<Province> getProvinceses(){
-			System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-			return repository.findAll();
-		}
 
 //	@CrossOrigin(origins = "http://localhost:5173") // Permite CORS solo para este método
 //	@GetMapping("api/province/{province_name}")
